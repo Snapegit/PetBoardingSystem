@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ChongwusiliaoDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ChongwusiliaoEntity" id="chongwusiliaoMap">
+        <result property="siliaomingcheng" column="siliaomingcheng"/>
+        <result property="siliaozhonglei" column="siliaozhonglei"/>
+        <result property="siliaotupian" column="siliaotupian"/>
+        <result property="siliaopinpai" column="siliaopinpai"/>
+        <result property="siliaoguige" column="siliaoguige"/>
+        <result property="jiage" column="jiage"/>
+        <result property="chuchanggongsi" column="chuchanggongsi"/>
+        <result property="siliaopeiliao" column="siliaopeiliao"/>
+        <result property="siliaoxiangqing" column="siliaoxiangqing"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+        <result property="storeupnum" column="storeupnum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ChongwusiliaoVO" >
+		SELECT * FROM chongwusiliao  chongwusiliao         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ChongwusiliaoVO" >
+		SELECT  chongwusiliao.* FROM chongwusiliao  chongwusiliao 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ChongwusiliaoView" >
+
+		SELECT  chongwusiliao.* FROM chongwusiliao  chongwusiliao 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ChongwusiliaoView" >
+		SELECT * FROM chongwusiliao  chongwusiliao <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
